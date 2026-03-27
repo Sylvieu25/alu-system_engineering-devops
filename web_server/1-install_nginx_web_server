@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-# Installs and configures Nginx to serve a page with "Holberton School"
-
-# Install nginx
-apt-get update -y
-apt-get install nginx -y
-
-# Create custom HTML page
-echo "Holberton School for the win!" > /var/www/html/index.html
-
-# Ensure nginx is running
-service nginx start
+## This script installs and configures Nginx to serve a page containing 'Holberton School'
+#
+#set -e
+#
+## Install nginx
+#apt-get update -y
+#apt-get install -y nginx
+#
+## Ensure nginx is running
+#service nginx start || service nginx restart
+#
+## Configure the default index page
+#echo "Holberton School for the win!" | tee /var/www/html/index.html > /dev/null
