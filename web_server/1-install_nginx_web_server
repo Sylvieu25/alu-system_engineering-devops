@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-## Installs nginx and configures it to serve "Holberton School"
+## Install nginx and configure the root page
 #
-#apt-get update -y
-#apt-get install nginx -y
-#
-#echo "Holberton School for the win!" > /var/www/html/index.html
-#
-#service nginx start
+#apt update -y
+#apt install -y nginx
+#echo "Holberton School" > /var/www/html/index.html
+#service nginx restart
