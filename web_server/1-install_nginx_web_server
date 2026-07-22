@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Installs and configures nginx to serve a page containing "Holberton School"
+
+apt-get -y update
+apt-get -y install nginx
+
+mkdir -p /var/www/html
+echo "Holberton School for the win!" > /var/www/html/index.html
+
+cat > /etc/nginx/sites-enabled/default << 'EOF'
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+
+root /var/www/html;
+index index.html;
+
+location / {
+try_files $uri $uri/ =404;
+}
+}
+EOF
+
+service nginx restart
+
+exit 0
