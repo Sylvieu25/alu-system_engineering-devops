@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 # Configures a new Ubuntu machine with Nginx and a custom HTTP response header X-Served-By
 
-# Update and install Nginx
+# shellcheck disable=SC2154
+
 apt-get update -y
 apt-get install -y nginx
 
-# Get the hostname of the server
 HOSTNAME=$(hostname)
 
-# Add custom header to all active Nginx site configs
 for config in /etc/nginx/sites-enabled/*; do
     if ! grep -q "X-Served-By" "$config"; then
         sed -i "/location \/ {/a\\
@@ -16,5 +15,4 @@ for config in /etc/nginx/sites-enabled/*; do
     fi
 done
 
-# Restart Nginx
 service nginx restart
