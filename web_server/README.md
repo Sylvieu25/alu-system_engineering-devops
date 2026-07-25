@@ -20,3 +20,4 @@ This project is part of the System Engineering / DevOps curriculum. It covers th
 | `1-install_nginx_web_server` | Installs and configures nginx, serving a page containing "Holberton School" on port 80 |
 | `2-setup_a_domain_name` | Contains the registered .tech domain name pointing to web-01 |
 | `3-redirection` | Configures nginx so that `/redirect_me` returns a 301 redirect |
+| `4-not_found_page_404` | Configures nginx with a custom 404 page containing "Ceci n'est pas une page" |

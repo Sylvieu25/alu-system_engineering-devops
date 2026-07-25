@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Configures nginx with a custom 404 page containing "Ceci n'est pas une page"
+
+apt-get -y update
+apt-get -y install nginx
+
+mkdir -p /var/www/html
+echo "Holberton School for the win!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+cat > /etc/nginx/sites-enabled/default << 'EOF'
+server {
+listen 80 default_server;
+listen [::]:80 default_server;
+
+root /var/www/html;
+index index.html;
+
+location /redirect_me {
+return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+}
+
+location / {
+try_files $uri $uri/ =404;
+}
+
+error_page 404 /404.html;
+}
+EOF
+
+service nginx restart
+
+exit 0
