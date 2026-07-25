@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Ceci n'est pas une page</title>
+<style>
+:root {
+--wall: #EDE8DE;
+--frame: #B8935A;
+--frame-dark: #8C6B3E;
+--canvas-top: #2E4D3A;
+--canvas-bottom: #0F2318;
+--ink: #1B1B1B;
+--brass: #C9A85C;
+--cream: #F5F0E6;
+}
+
+* {
+box-sizing: border-box;
+}
+
+html, body {
+margin: 0;
+padding: 0;
+height: 100%;
+}
+
+body {
+background: var(--wall);
+background-image:
+radial-gradient(circle at 20% 20%, rgba(0,0,0,0.03), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(0,0,0,0.03), transparent 40%);
+font-family: Georgia, 'Times New Roman', serif;
+color: var(--ink);
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+padding: 40px 20px;
+}
+
+main {
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 560px;
+width: 100%;
+}
+
+.wall-label {
+font-family: Georgia, serif;
+font-size: 11px;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: #7a7266;
+margin-bottom: 18px;
+}
+
+.frame {
+background: linear-gradient(145deg, var(--frame), var(--frame-dark));
+padding: 18px;
+border-radius: 3px;
+box-shadow:
+0 25px 50px -12px rgba(0,0,0,0.35),
+inset 0 0 0 2px rgba(255,255,255,0.15);
+}
+
+.canvas {
+position: relative;
+width: min(70vw, 460px);
+height: min(70vw, 340px);
+background: linear-gradient(180deg, var(--canvas-top), var(--canvas-bottom));
+overflow: hidden;
+box-shadow: inset 0 0 30px rgba(0,0,0,0.25);
+}
+
+.cloud {
+position: absolute;
+background: rgba(255,255,255,0.25);
+border-radius: 999px;
+filter: blur(0.5px);
+}
+
+@keyframes drift {
+from { transform: translateX(0); }
+to { transform: translateX(18px); }
+}
+
+.cloud { animation: drift 9s ease-in-out infinite alternate; }
+.cloud2 { animation-duration: 12s; animation-delay: -3s; }
+.cloud3 { animation-duration: 7s; animation-delay: -5s; }
+
+.pipe {
+position: absolute;
+left: 50%;
+top: 55%;
+transform: translate(-50%, -50%);
+width: 46%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+.cloud { animation: none; }
+}
+
+.placard {
+background: linear-gradient(180deg, var(--brass), #A9803E);
+color: #2a1f0d;
+padding: 16px 28px;
+margin-top: 22px;
+border-radius: 2px;
+text-align: center;
+box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+max-width: 420px;
+}
+
+.placard-text {
+font-style: italic;
+font-size: 20px;
+margin: 0 0 4px 0;
+}
+
+.placard-sub {
+font-size: 12px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+margin: 0;
+opacity: 0.75;
+}
+
+.exit {
+margin-top: 28px;
+font-family: Georgia, serif;
+font-size: 14px;
+letter-spacing: 0.03em;
+color: var(--ink);
+text-decoration: none;
+border-bottom: 1px solid var(--ink);
+padding-bottom: 2px;
+transition: opacity 0.2s ease;
+}
+
+.exit:hover,
+.exit:focus-visible {
+opacity: 0.6;
+}
+
+.exit:focus-visible {
+outline: 2px solid var(--frame-dark);
+outline-offset: 4px;
+}
+</style>
+</head>
+<body>
+<main>
+<p class="wall-label">Exposition permanente — Erreur 404</p>
+<div class="frame">
+<div class="canvas">
+<div class="cloud" style="width:70px;height:26px;top:18%;left:10%;"></div>
+<div class="cloud cloud2" style="width:100px;height:34px;top:12%;left:55%;"></div>
+<div class="cloud cloud3" style="width:60px;height:22px;top:70%;left:65%;"></div>
+<div class="cloud" style="width:80px;height:28px;top:78%;left:8%;"></div>
+<svg class="pipe" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 55 Q15 40 35 38 L120 30 Q140 28 145 45 Q148 58 132 60 L60 66 Q40 68 32 60 Q22 62 20 55 Z"
+fill="#F5F0E6" stroke="#1B1B1B" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="150" cy="42" rx="18" ry="22" fill="#F5F0E6" stroke="#1B1B1B" stroke-width="3"/>
+<ellipse cx="150" cy="42" rx="10" ry="13" fill="#3B2A1A"/>
+</svg>
+</div>
+</div>
+<div class="placard">
+<p class="placard-text">Ceci n'est pas une page</p>
+<p class="placard-sub">René, si tu nous regardes</p>
+</div>
+<a href="/" class="exit">&larr; Retourner à l'accueil</a>
+</main>
+</body>
+</html>

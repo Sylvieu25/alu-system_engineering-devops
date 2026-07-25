@@ -21,3 +21,4 @@ This project is part of the System Engineering / DevOps curriculum. It covers th
 | `2-setup_a_domain_name` | Contains the registered .tech domain name pointing to web-01 |
 | `3-redirection` | Configures nginx so that `/redirect_me` returns a 301 redirect |
 | `4-not_found_page_404` | Configures nginx with a custom 404 page containing "Ceci n'est pas une page" |
+| `5-design_a_beautiful_404_page.html` | A creative, Magritte-inspired 404 page design containing "Ceci n'est pas une page" |
