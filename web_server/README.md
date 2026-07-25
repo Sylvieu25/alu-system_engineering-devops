@@ -18,3 +18,4 @@ This project is part of the System Engineering / DevOps curriculum. It covers th
 | --- | --- |
 | `0-transfer_file` | Transfers a file from the client to a server's home directory using `scp`, with strict host key checking disabled|
 | `1-install_nginx_web_server` | Installs and configures nginx, serving a page containing "Holberton School" on port 80 |
+| `2-setup_a_domain_name` | Contains the registered .tech domain name pointing to web-01 |
